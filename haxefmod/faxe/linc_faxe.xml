@@ -2,24 +2,24 @@
 
 	<!-- Determine toolkit locations before starting. -->	
 	<section if="windows">
-		<set name="NATIVE_TOOLKIT_PATH" value="${LINC_FAXE_PATH}/lib/Windows" />
+		<set name="NATIVE_TOOLKIT_PATH" value="${HAXEFMOD_PATH}/lib/Windows" />
 	</section>
 	<section if="linux">
-		<set name="NATIVE_TOOLKIT_PATH" value="${LINC_FAXE_PATH}/lib/Linux" />
+		<set name="NATIVE_TOOLKIT_PATH" value="${HAXEFMOD_PATH}/lib/Linux" />
 	</section>
 		
 	<echo value="Located FMOD API libraries at ${NATIVE_TOOLKIT_PATH}!" ifExists="${NATIVE_TOOLKIT_PATH}/api" />
 
 	<!-- Include flags at compile time. -->
 	<files id="haxe">
-		<compilerflag value="-I${LINC_FAXE_PATH}faxe/" />
+		<compilerflag value="-I${HAXEFMOD_PATH}faxe/" />
 		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/api/core/inc/" />
 		<compilerflag value="-I${NATIVE_TOOLKIT_PATH}/api/studio/inc/" />
 		
 		<compilerflag value="-std=c++11" if="linux" />
 		<compilerflag value="-Wl,-rpath,$ORIGIN" if="linux" />
 
-		<file name="${LINC_FAXE_PATH}/faxe/linc_faxe.cpp" />
+		<file name="${HAXEFMOD_PATH}/haxefmod/faxe/linc_faxe.cpp" />
 	</files>
 	
 	<!-- Include libraries at build time. -->
