@@ -2,12 +2,12 @@ package haxefmod;
 
 import haxefmod.FmodInternalEnums;
 
-#if windows
+#if (windows || linux)
 @:keep
 @:include('linc_faxe.h')
 #if !display
 @:build(faxe.Linc.touch())
-@:build(faxe.Linc.xml('faxe'))
+@:build(faxe.Linc.xml('haxefmod.faxe'))
 #end
 extern class HaxeFmod {
 
@@ -69,7 +69,7 @@ extern class HaxeFmod {
 }
 
 #elseif html5
-@:native("jaxe")
+@:native("haxefmod.jaxe")
 extern class HaxeFmod {
 
     //// FMOD System
