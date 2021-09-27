@@ -4,10 +4,10 @@ import haxefmod.FmodInternalEnums;
 
 #if (windows || linux)
 @:keep
-@:include('faxe/linc_faxe.h')
+@:include('linc_faxe.h')
 #if !display
 @:build(haxefmod.faxe.Linc.touch())
-@:build(haxefmod.faxe.Linc.xml('haxefmod.faxe'))
+@:build(haxefmod.faxe.Linc.xml('faxe'))
 #end
 extern class HaxeFmod {
 
