@@ -1,5 +1,6 @@
 package haxefmod;
 
+import haxefmod.HaxeFmod;
 import haxefmod.FmodEvents.FmodCallback;
 import haxefmod.FmodEvents.FmodEvent;
 import haxefmod.FmodEvents.FmodEventListener;
