@@ -1,18 +1,11 @@
 # FMOD for Haxe on Windows and HTML5
 
-**Note: The API of this library will change early on**
+**Disclaimer: This library implements FMOD Studio, an audio engine developed by Firelight Technologies Pty Ltd. You must comply with [FMOD Studio's license agreement](https://www.fmod.com/licensing) to download and use this library, especially for commercial applications.**
 
-**Other Note: Remember to follow the rules of [FMOD's license](https://tanneris.me/FMOD-License) when using this library**
+**haxe-fmod** is a library to integrate the FMOD audio engine with Haxe 4 games. It is available for Windows, Linux, and HTML5 deployments.
 
-A library to integrate the FMOD audio engine with Haxe 4 games for Windows and HTML5 deployments
+haxe-fmod primarily focuses on simplifying the FMOD Studio project workflow through the use of a well-documented [helper library](https://tanneris.me/haxe-fmod-helper-library)
 
-Primarily focuses on simplifying the FMOD Studio project workflow through the use of a well-documented [helper library](https://tanneris.me/haxe-fmod-helper-library)
-
-The Windows integration was built on top of Aaron Shea's [C++ integration with FMOD's official API](https://tanneris.me/faxe)
-
-LICENCE: [MIT](https://tanneris.me/mit-license)
-
-[Download the package via Haxelib](https://tanneris.me/haxelib)
 
 ## Table of Contents
 
@@ -24,10 +17,12 @@ LICENCE: [MIT](https://tanneris.me/mit-license)
  - [Local Development](#local-development)
  - [Future Goals](#future-goals)
  - [Feature Requests and Contact](#feature-requests-and-contact)
+ - [Licensing and Attribution](#licensing)
 
 
 ## <a name="features"></a>Features 
-- Sounds loaded using an [FMOD bank](http://tanneris.me/FMOD-Banks) file
+- Load and playback sound files using basically any audio format, including but not limited to OGG, MP3, WAV, AIFF, FLAC, WMA, or MIDI
+- Load and playback sounds and sound events using an [FMOD bank](http://tanneris.me/FMOD-Banks) file
 - [Event parameters](http://tanneris.me/FMOD-Parameters) for dynamically altering sounds based on in-game actions
 - [Callbacks](https://tanneris.me/FMOD-Callbacks-Types) which enable the game to respond to the audio
 - [Live Update](http://tanneris.me/FMOD-Live-Update) for mixing sounds while play testing (must be done on Windows game builds)
@@ -43,10 +38,13 @@ After configuring your project to work with this library, playing a song or soun
     // This example uses the create and update calls found in HaxeFlixel games
 
     override public function create():Void {
-        // Plays a song in your game
+        // Plays a song from a file
+        FmodManager.PlaySong("assets/songs/MySound.ogg");
+        
+        // Plays a song from the Master bank
         FmodManager.PlaySong("event:/Music/MainLevel");
 
-        // Plays a sound in your game
+        // Plays a sound from the Master bank
         FmodManager.PlaySoundOneShot("event:/SFX/Jump");
     }
     
@@ -61,7 +59,7 @@ After configuring your project to work with this library, playing a song or soun
 
 This will be the tool you use to manage all audio for your game. Download FMOD Studio version 2.00.08 [here](https://tanneris.me/fmod-downloads). Once installed, follow the [FMOD Studio Project Configuration](#fmod-studio-project-configuration) section before moving on.
 
-**Add the library your Haxe project:**
+**Add the haxefmod library to your Haxe project:**
 
 [Download the package via Haxelib](https://tanneris.me/haxelib)
 
@@ -148,3 +146,9 @@ This will setup the git repo as an "installed" version of `haxefmod` which can b
 ## <a name="feature-requests-and-contact"></a>Feature Requests and Contact
 
 If you have any feature requests or are having issues using the library, please [open an Issue](https://tanneris.me/haxe-fmod-issues) here on Github
+
+## <a name="licensing"></a>Licensing and Attribution
+
+haxe-fmod is developed under the permissive MIT License.
+
+The Windows integration was built on top of Aaron Shea's [C++ integration with FMOD's official API](https://tanneris.me/faxe)
