@@ -50,7 +50,7 @@ class Linc {
         var _linc_lib_var = 'HAXEFMOD_PATH';
 
         var _define = '<set name="$_linc_lib_var" value="$_linc_lib_path/"/>';
-        var _import_path = '$${$_linc_lib_var}faxe/linc_${_lib}.xml';
+        var _import_path = '$${$_linc_lib_var}/haxefmod/faxe/linc_faxe.xml';
         var _import = '<include name="$_import_path" />';
 
         Context.info('Test', _class.get().pos);
