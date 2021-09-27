@@ -1,4 +1,4 @@
-package faxe;
+package haxefmod.faxe;
 
 import haxe.io.Path;
 import haxe.macro.Context;
