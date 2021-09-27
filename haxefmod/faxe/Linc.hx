@@ -53,7 +53,7 @@ class Linc {
         var _import_path = '$${$_linc_lib_var}faxe/linc_${_lib}.xml';
         var _import = '<include name="$_import_path" />';
 
-        Context.info('Test', _class.pos);
+        Context.info('Test', _class.get().pos);
 
         _class.get().meta.add(":buildXml", [{expr: EConst(CString('$_define\n$_import')), pos: _pos}], _pos);
 
